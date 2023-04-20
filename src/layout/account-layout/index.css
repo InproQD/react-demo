@@ -1,0 +1,21 @@
+.panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center
+}
+.ant-row {
+    width: 100%;
+    height: 762px;
+}
+.left-panel {
+    background-color: #0F08BD;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 48px 32px 48px 32px
+}
+.left-panel-img {
+    /*height: 100px;*/
+    /*width: 200px*/
+}
