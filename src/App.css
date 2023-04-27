@@ -5,11 +5,9 @@
 html {
     // 加了padding之后，盒子不会变大
     box-sizing: border-box;
-    overflow-y: scroll;
-    -webkit-text-size-adjust: 100%;
-    word-break: normal;
-    -moz-tab-size: 4;
-    tab-size: 4;
+    /*word-break: normal;*/
+    /*-moz-tab-size: 4;*/
+    /*tab-size: 4;*/
 }
 
 *,

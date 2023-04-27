@@ -25,8 +25,16 @@
     width: calc(100% - 64px);
     text-align: center
 }
+.right-panel{
+    height: 762px!important;
+    background-color: #FFFFFF;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
 .right-head-panel{
     height: 47px;
+    line-height: 47px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
 }

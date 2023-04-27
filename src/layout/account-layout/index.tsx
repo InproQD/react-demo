@@ -24,9 +24,10 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({ children }) => {
     domain: '',
     fssBackgroundUrl: ''
   }
+
   const [portfolio, setPortfolio] = useState<Portfolio>(portfolioValue)
   const [portfolioWebsite, setPortfolioWebsite] = useState('')
-  const backgroundRef = useRef(null)
+  const backgroundRef = useRef<HTMLDivElement>(null)
 
   const getPortfolio = () => {
     CustomerInfrastructureApi.getPortfolioParameters(110, (result: Portfolio) => {
@@ -69,10 +70,14 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({ children }) => {
           </div>
         </Col>
         <Col span={10}>
-          <div className="right-head-panel">
-            <div> Sign In</div>
+          <div className="right-panel px-8">
+            <div className="right-head-panel f-w-700">
+              <div className="f-s-16">Sign In</div>
+              <div className="text-gray">Sign In</div>
+            </div>
+            <Divider dashed style={{ background: 'gray', margin: '0' }} />
+            <main className="pb-12">{children}</main>
           </div>
-          <main>{children}</main>
         </Col>
       </Row>
     </div>
