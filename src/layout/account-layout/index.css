@@ -10,7 +10,7 @@
 }
 .left-panel {
     background-color: #0F08BD;
-    height: 100%;
+    height: 762px!important;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     padding: 48px 32px 48px 32px
@@ -18,4 +18,15 @@
 .left-panel-img {
     /*height: 100px;*/
     /*width: 200px*/
+}
+.left-content-footer {
+    position: absolute;
+    bottom: 52px;
+    width: calc(100% - 64px);
+    text-align: center
+}
+.right-head-panel{
+    height: 47px;
+    display: flex;
+    justify-content: space-around;
 }

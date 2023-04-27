@@ -30,6 +30,6 @@ module.exports = {
     "rules": {
        "@typescript-eslint/no-explicit-any": 'off',
        "react-hooks/rules-of-hooks": "error",
-       "react-hooks/exhaustive-deps": "warn"
+       "react-hooks/exhaustive-deps": "off", // 这个规则的作用是检查 "useEffect" 钩子中依赖项数组是否包含所有需要的变量或函数
     }
 }

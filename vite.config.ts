@@ -7,16 +7,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    plugins: [react(),
+    plugins: [
+      react(),
       eslintPlugin({
         include: ['src/**/*.ts', 'src/**/*.tsx', 'src/*.ts', 'src/*.tsx']
-      })],
+      })
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src')
       }
     },
-
+    define: {
+      'process.env': Object.assign(process.env, env)
+    },
     server: {
       proxy: {
         '/gateway': {

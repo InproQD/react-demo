@@ -1,11 +1,15 @@
 import SingIn from '@/pages/sign-in'
-import { createBrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import React from 'react'
 
-const router = createBrowserRouter([
-  {
-    path: '/sign-in',
-    element: SingIn()
-  }
-])
+const router = () => {
+  return (
+    <div>
+      <Routes>
+        <Route path={'/sign-in'} element={<SingIn />}></Route>
+      </Routes>
+    </div>
+  )
+}
 
 export default router
