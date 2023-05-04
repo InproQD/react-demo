@@ -1,7 +1,9 @@
 import React, { ReactNode, useEffect, useState, useRef } from 'react'
 import { Row, Col, Divider } from 'antd'
-import { CustomerInfrastructureApi } from '@/api/phoenix/customer-infrastructure'
+import { CustomerInfrastructureApi } from '@/api'
 import './index.css'
+import { useDispatch } from 'react-redux'
+import portfolioActions from '@/actions/portfolioActions'
 
 //-----------类型定义写外面（如果写在函数里面，那么每次render都会重新定义给值）
 interface AccountLayoutProps {
@@ -28,10 +30,12 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({ children }) => {
   const [portfolio, setPortfolio] = useState<Portfolio>(portfolioValue)
   const [portfolioWebsite, setPortfolioWebsite] = useState('')
   const backgroundRef = useRef<HTMLDivElement>(null)
+  const dispatch = useDispatch()
 
   const getPortfolio = () => {
     CustomerInfrastructureApi.getPortfolioParameters(110, (result: Portfolio) => {
       setPortfolio(result)
+      dispatch(portfolioActions.getPortfolio(result))
     }).then()
   }
 
@@ -85,3 +89,8 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({ children }) => {
 }
 
 export default AccountLayout
+// connect 有两个参数，均为回调函数，
+// 第一个参数是用于获取store中的state, 第二个参数是用于获取redux的actionCreators中的方法
+// export default connect((state: { auth: object }) => {
+//   return state.auth
+// })(AccountLayout)

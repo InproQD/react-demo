@@ -5,8 +5,9 @@ import React from 'react'
 import Crypto from '@/utils/crypto'
 import './index.css'
 import AccountLayout from '@/layout/account-layout/index'
+import { connect } from 'react-redux'
 
-export default function SingIn() {
+function SingIn(props: any) {
   const [account, setAccount] = useState('')
   const [password, setPassword] = useState('')
   const [showPasswordInput, setShowPasswordInput] = useState(false)
@@ -49,7 +50,7 @@ export default function SingIn() {
   return (
     <AccountLayout>
       <div className="head-content">
-        {/*<img alt={''} src={} width={200} />*/}
+        <img alt={''} src={props.portfolioJson.iconUrl} width={200} />
         <div className="text-title py-3">Sign In</div>
         <div className="py-3">Manage Your Account</div>
         <Input
@@ -89,3 +90,6 @@ export default function SingIn() {
     </AccountLayout>
   )
 }
+export default connect((state: any) => {
+  return state.portfolio
+})(SingIn)

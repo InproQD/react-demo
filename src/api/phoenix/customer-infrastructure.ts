@@ -9,7 +9,7 @@ export const CustomerInfrastructureApi = {
   async getPortfolioPrograms(success: any, failure: any) {
     return await request.get(`${BASE_URL}/get-portfolio-program`, {}, success, failure)
   },
-  async getPortfolioParameters(portfolioId: any, success: any, failure?: any) {
+  async getPortfolioParameters(portfolioId: any, success?: any, failure?: any) {
     return await request.get(`${BASE_URL}/get-portfolio-parameters`, { portfolioId }, success, failure)
   }
 }
