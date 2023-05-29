@@ -1,7 +1,7 @@
 // 用于打造rootReducer
 import { combineReducers } from 'redux'
-import authReducer from '@/reducers/authReducer'
-import portfolioReducer from '@/reducers/portfolioReducer'
+import authReducer from '@/redux/reducers/authReducer'
+import portfolioReducer from '@/redux/reducers/portfolioReducer'
 // 用于统一处理项目中的所有reducer
 // rootReducer是所有的数据，而combineReducers是划分出来的每一部分数据
 const rootReducer = combineReducers({

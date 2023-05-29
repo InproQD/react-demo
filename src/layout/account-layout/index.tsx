@@ -3,7 +3,7 @@ import { Row, Col, Divider } from 'antd'
 import { CustomerInfrastructureApi } from '@/api'
 import './index.css'
 import { useDispatch } from 'react-redux'
-import portfolioActions from '@/actions/portfolioActions'
+import portfolioActions from '@/redux/actions/portfolioActions'
 
 //-----------类型定义写外面（如果写在函数里面，那么每次render都会重新定义给值）
 interface AccountLayoutProps {
